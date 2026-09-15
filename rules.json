@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "ruleset_id": "vt-engineering",
+  "version": "1.0.0",
+  "authority": "User engineering requirements approved 2026-09-15; operational publication and review conventions",
+  "implementation_status": "Normative guidance; runtime enforcement must be verified separately",
+  "rules": [
+    {
+      "id": "VT-ID-001",
+      "title": "Physical labels and controller identities are independent",
+      "requirement": "Preserve physical_label, graphic_object_path, u_base, PLC member, CC and CA separately. SB+ and OR+ digits may differ from the U-base digits. A difference alone is not an error and never authorizes renaming. Validate the association from drawings and controller evidence.",
+      "status": "active"
+    },
+    {
+      "id": "VT-ID-002",
+      "title": "Numeric sequence does not define topology",
+      "requirement": "Preserve drawing and wiring order, including decreasing numbers, gaps, branches and reversals. Never sort beds or infer adjacency by equipment or tag number.",
+      "status": "active"
+    },
+    {
+      "id": "VT-CAN-001",
+      "title": "Resolve CAN and index per bed",
+      "requirement": "Record ECG, ECC, CAN, index, zone, connection direction and source evidence per bed. Adjacent beds may switch CAN, index and feed direction midway through a physical run. Do not increment an index or carry forward ownership without wiring and controller evidence.",
+      "status": "active"
+    },
+    {
+      "id": "VT-SRC-001",
+      "title": "Use authority for each field",
+      "requirement": "Drawings and PDFs establish intended physical layout, labels, wiring and addressing callouts. PLC/controller exports establish implemented members and exposure. DataWorX databases and exports establish configured source paths. Current graphics establish existing geometry and dynamics. No single file proves all fields. Preserve disagreements and revision context.",
+      "status": "active"
+    },
+    {
+      "id": "VT-PATH-001",
+      "title": "RSOPC Gateway for PLC-facing inputs",
+      "requirement": "Every newly generated or corrected PLC-facing input string must use RSOPC Gateway with the evidenced controller/topic and member. RSLinx OPC Server and other legacy PLC server prefixes are not generation defaults. Retain legacy files as evidence; flag unresolved legacy paths for migration rather than release them as compliant outputs.",
+      "status": "active"
+    },
+    {
+      "id": "VT-PATH-002",
+      "title": "Preserve remote routing and aliases per row",
+      "requirement": "Derive local versus remote routing from the DataWorX database, its matching CSV export and verified site configuration. Preserve evidenced <<CN>> and <<CN1>> aliases as distinct bindings. A workbook may alternate aliases by row. Never force a hard-coded IP, flatten all rows to one host, or invent alias bindings.",
+      "status": "active"
+    },
+    {
+      "id": "VT-PATH-003",
+      "title": "Keep path layers distinct",
+      "requirement": "A PLC-facing DataWorX input uses RSOPC Gateway. A reference that reads a remote DataWorX tag uses its evidenced ICONICS.DataWorX32 or other verified product namespace. GraphWorX and AlarmWorX consumers may reference DataWorX. Do not replace a DataWorX or AlarmWorX namespace with RSOPC Gateway. Classify the path role before validation; preserve expression structure and each remote endpoint.",
+      "status": "active"
+    },
+    {
+      "id": "VT-XLSX-001",
+      "title": "Preserve the approved workbook contract",
+      "requirement": "Use the existing approved VT workbook template and output tags.xlsx. Preserve required sheets, headers and column order. Carry the correct local or remote input and alias into each row. Do not add a Remote column or tab unless the import contract explicitly supports it; store routing metadata in the adjacent project synopsis.",
+      "status": "active"
+    },
+    {
+      "id": "VT-VERIFY-001",
+      "title": "Validate mappings before release",
+      "requirement": "Cross-check label-to-tag relationships, per-bed CAN/index ownership, alias bindings, path roles and PLC member exposure against referenced sources. Verify saved workbook rows and corresponding CSV/database values. Unresolved mappings remain proposed; a native file reopen alone does not prove semantic correctness.",
+      "status": "active"
+    },
+    {
+      "id": "VT-LEARN-001",
+      "title": "Promote evidence-backed lessons",
+      "requirement": "Record lesson ID, site, scope, source file hashes and locators, observation, proposed rule, caveats, reviewer, approval and affected versions. A successful site example does not automatically become a universal rule. Keep personnel and implementation dates unknown unless supported.",
+      "status": "active"
+    },
+    {
+      "id": "VT-SYNC-001",
+      "title": "Share rules across hosts with explicit versions",
+      "requirement": "Use the canonical GitHub rules repository and a pinned commit or release in each project. Local desktop Brian, desktop main and laptop Brian profiles contain paths and capabilities only. Host preferences do not override engineering rules. Record rule version in each job and output manifest. If offline, identify the cached version; never claim it is current without checking.",
+      "status": "active"
+    },
+    {
+      "id": "VT-PUBLIC-001",
+      "title": "Publish generalized knowledge separately from site evidence",
+      "requirement": "Public contributions contain generalized rules and synthetic examples only. Keep credentials, real IP mappings, private drawings, customer project files and access tokens in authorized project storage. Link private evidence by internal reference without copying it into the public rules repository.",
+      "status": "active"
+    }
+  ]
+}
