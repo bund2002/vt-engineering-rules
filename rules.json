@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "ruleset_id": "vt-engineering",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authority": "User engineering requirements approved 2026-09-15; operational publication and review conventions",
   "implementation_status": "Normative guidance; runtime enforcement must be verified separately",
   "rules": [

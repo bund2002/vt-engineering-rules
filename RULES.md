@@ -1,6 +1,6 @@
 # VT Shared Engineering Rules
 
-Version 1.0.0. These rules govern VT project analysis and newly generated or corrected engineering outputs. Documentation, code enforcement and native validation are separate claims.
+Version 1.0.1. These rules govern VT project analysis and newly generated or corrected engineering outputs. Documentation, code enforcement and native validation are separate claims.
 
 ## Using the rules
 
